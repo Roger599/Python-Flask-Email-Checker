@@ -9,7 +9,3 @@ Visit <a href="https://www.crackersploit.com/flask_email_checker.html" target="_
 <img src="https://www.crackersploit.com/images/flaskEmailChecker/Screenshot1.jpg" width="350">
 <img src="https://www.crackersploit.com/images/flaskEmailChecker/Screenshot2.jpg" width="350">
 <img src="https://www.crackersploit.com/images/flaskEmailChecker/Screenshot3.jpg" width="350">
-<img src="https://www.crackersploit.com/images/flaskEmailChecker/Screenshot4.jpg" width="350">
-<img src="https://www.crackersploit.com/images/flaskEmailChecker/Screenshot5.jpg" width="350">
-
-     
