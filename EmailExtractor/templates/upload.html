@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="main">
+
+        <h2 class="subTitle">Upload File</h2>
+
+        <p>Upload files of type: csv or txt, to extract and validate all email addresses they contain (uploaded files are not stored on the server)</p>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            {% if form.file.errors %}
+                {{ form.file(accept="text/plain, .csv") }}
+                {% for error in form.file.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                {{ form.file(accept="text/plain, .csv") }}
+            {% endif %}
+
+            {{ form.submit }}
+        </form>
+
+        <br>
+
+        <h3>Found email addresses = All email addresses that have the right format</h3>
+        <h3>Verified email addresses = All email address that have the right format, a mx record and a responding
+        mail server</h3>
+
+        <br>
+
+        {% if valid_emails != 'Text and CSV Files only!' and valid_emails != ''%}
+            <h3>Results</h3>
+            Found email addresses: {{valid_formats}}
+            <br>
+            <br>
+            Verified email addresses: {{valid_emails}}
+        {% else %}
+            {{valid_emails}}
+        {% endif %}
+
+
+    </div>
+
+{% endblock content %}

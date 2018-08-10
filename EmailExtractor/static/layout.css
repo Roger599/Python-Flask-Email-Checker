@@ -1,0 +1,43 @@
+body{
+    margin:0px;
+}
+
+.center{
+    background:black;
+    text-align:center;
+    padding:15px;
+    color:white;
+}
+
+.center h1{
+    margin:0px;
+    margin-bottom:5px;
+}
+
+.center i{
+    margin-left:5px;
+}
+
+.center a{
+    color:white;
+}
+
+.main{
+    padding:20px;
+}
+
+.subTitle{
+    text-decoration:underline;
+}
+
+textarea{
+    height:10em;
+    width:80%;
+}
+
+@media only screen and (min-width: 900px) {
+    textarea{
+    height:10em;
+    width:40%;
+    }
+}

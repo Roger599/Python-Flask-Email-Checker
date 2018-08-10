@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="main">
+
+        <h2 class="subTitle">Email Extractor</h2>
+        
+         <form action="" method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            {% if form.text.errors %}
+                {{ form.text(accept="text/plain, .csv") }}
+                {% for error in form.text.errors %}
+                    <br>
+                    <span>{{ error }}</span>
+                    <br>
+                {% endfor %}
+            {% else %}
+                {{ form.text(accept="text/plain, .csv") }}
+            {% endif %}
+
+             <br>
+
+            {{ form.submit }}
+        </form>
+
+        <br>
+
+        {% if length > 0 %}
+            {% for i in range(0, length)%}
+                {% if i == length - 1 %}
+                    {{emails[i]}}
+                {% else %}
+                    {{emails[i]}},
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        {% if length == 1 %}
+            <p>{{length}} email was found</p>
+        {% elif length == 0 %}
+            <p>No email was found</p>
+        {% else %}
+            <p>{{length}} emails were found</p>
+        {% endif %}
+    </div>
+{% endblock content %}

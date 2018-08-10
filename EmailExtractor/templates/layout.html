@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Email Check</title>
+    <link rel="stylesheet" type="text/css" href="/static/layout.css">
+</head>
+<body>
+    <header class="center">
+        <h1>Email Check</h1>
+        <span>
+            <i><a href="{{url_for('home')}}">Email Extractor</a></i>
+            <i><a href="{{url_for('email_verifier')}}">Email Verifier</a></i>
+            <i><a href="{{url_for('upload_file')}}">Upload</a></i>
+        </span>
+
+    </header>
+    {% block content %}{% endblock %}
+</body>
+</html>

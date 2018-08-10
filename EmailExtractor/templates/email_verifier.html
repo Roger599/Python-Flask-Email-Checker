@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="main">
+
+        <h2 class="subTitle">Email Verifier</h2>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            {% if form.email.errors %}
+                {{ form.email(accept="text/plain, .csv") }}
+                {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                {{ form.email(accept="text/plain, .csv") }}
+            {% endif %}
+
+            {{ form.submit }}
+        </form>
+
+        <br>
+
+        {% if check1 and check2 %}
+            <h3>Email is legit</h3>
+        {% else %}
+            <h3>Email is not legit</h3>
+        {% endif %}
+
+        {% if check1 %}
+            <p>MX Record found</p>
+        {% else %}
+            <p>No MX Record found</p>
+        {% endif %}
+
+        {% if check2 %}
+            <p>Email mailbox exists</p>
+        {% else %}
+            <p>Email mailbox does not exist</p>
+        {% endif %}
+
+    </div>
+{% endblock content %}
